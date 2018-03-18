@@ -1,4 +1,4 @@
-class HotKey {
+export class HotKey {
 
   constructor(config) {
 
@@ -12,22 +12,22 @@ class HotKey {
 
     this.setRules(config.rules || [])
 
-    this.handleKeydown = this.handleKeydown.bind(this)
-    this.handleKeyup = this.handleKeyup.bind(this)
+    this._handleKeydown = this._handleKeydown.bind(this)
+    this._handleKeyup = this._handleKeyup.bind(this)
 
   }
 
   start() {
 
-    this._domNode.addEventListener('keydown', this.handleKeydown)
-    this._domNode.addEventListener('keyup', this.handleKeyup)
+    this._domNode.addEventListener('keydown', this._handleKeydown)
+    this._domNode.addEventListener('keyup', this._handleKeyup)
 
   }
 
   stop() {
 
-    this._domNode.removeEventListener('keydown', this.handleKeydown)
-    this._domNode.removeEventListener('keyup', this.handleKeyup)
+    this._domNode.removeEventListener('keydown', this._handleKeydown)
+    this._domNode.removeEventListener('keyup', this._handleKeyup)
 
   }
 
@@ -58,7 +58,7 @@ class HotKey {
 
   }
 
-  handleKeydown(event) {
+  _handleKeydown(event) {
 
     clearTimeout(this._timer)
 
@@ -104,7 +104,7 @@ class HotKey {
 
   }
 
-  handleKeyup(event) {
+  _handleKeyup(event) {
 
     const cmdKeyCodes = [
       91,  // chrome
@@ -126,5 +126,3 @@ class HotKey {
   }
 
 }
-
-module.exports = HotKey

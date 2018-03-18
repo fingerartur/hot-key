@@ -1,8 +1,8 @@
 interface Config {
     domNode: HTMLElement,
-    symbols: number,
-    delay: number,
-    rules: Array<Rule>,
+    symbols?: number,
+    delay?: number,
+    rules?: Array<Rule>,
 }
 
 interface Rule {

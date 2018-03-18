@@ -6,7 +6,7 @@ Listens hotkeys events in browser.
   npm i hot-key
 ```
 
-## How to use?
+## How to use? (JS)
 
 ```javascript
 const HotKey = require('hot-key')
@@ -84,6 +84,21 @@ hotKey.start()
 
 // stop listen events
 hotKey.stop()
+
+
+```
+
+
+## How to use? (TS)
+
+```typescript
+import { HotKey } from 'hot-key';
+
+// ... mostly same as in JS
+
+hotKey.on('cmd+z', (event: KeyboardEvent) => {
+  console.log('history back');
+})
 
 
 ```

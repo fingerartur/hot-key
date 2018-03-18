@@ -1,8 +1,9 @@
 {
   "name": "hot-key",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Listens hotkeys events.",
   "main": "build/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,9 @@
     "hotkey"
   ],
   "author": "Igor Sterjakov",
+  "contributors": [
+    "Artur Finger"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sterjakovigor/hot-key/issues"
